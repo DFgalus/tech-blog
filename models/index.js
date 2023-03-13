@@ -9,28 +9,17 @@ User.hasMany(Post, {
     onDelete: 'CASCADE'
 });
 
-Occasion.belongsTo(User, {
+Post.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Recipient.hasMany(Gift, {
-    foreignKey: 'recipient_id',
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
     onDelete: 'CASCADE'
 });
 
-Gift.belongsTo(Recipient, {
-    foreignKey: 'recipient_id'
-});
-
-
-Occasion.hasMany(Recipient, {
-    foreignKey: 'occasion_id',
-    onDelete: 'CASCADE'
-});
-
-
-Recipient.belongsTo(Occasion, {
-    foreignKey: 'occasion_id'
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id'
 });
 
 module.exports = { User, Recipient, Occasion, Gift };
