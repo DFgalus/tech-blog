@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Recipient extends Model {}
+class Post extends Model {}
 
 Recipient.init (
  {
@@ -36,4 +36,4 @@ Recipient.init (
  }
 );
 
-module.exports = Recipient;
+module.exports = Post;
