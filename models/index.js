@@ -1,11 +1,10 @@
 //MODELS
 const User = require('./User');
-const Gift = require('./Gift')
-const Occasion = require('./Occasion');
-const Recipient = require('./Recipient');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 //ASSOCIATIONS
-User.hasMany(Occasion, {
+User.hasMany(Post, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
