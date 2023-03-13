@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-Recipient.init (
+Post.init (
  {
     id: {
         type: DataTypes.INTEGER,
@@ -19,6 +19,11 @@ Recipient.init (
         type: DataTypes.STRING,
         allowNull: false,
       },
+      date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
       user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -32,7 +37,7 @@ Recipient.init (
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'recipient',
+    modelName: 'post',
  }
 );
 
